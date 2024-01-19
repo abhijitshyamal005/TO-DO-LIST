@@ -1,0 +1,89 @@
+*{
+    padding: 0;
+    margin: 0;
+
+}
+.card{
+    width: 90%;
+    max-width: 500px;
+    background: rgb(22, 68, 68);
+    box-shadow: 25px 25px 25px rgb(24, 55, 55);
+    color:#fff;
+    margin: 100px auto 0;
+    border-radius: 20px;
+    padding: 40px 35px;
+    text-align: left;
+}
+.note{
+    display: flex;
+    font: 60px;
+    align-items: center;
+}
+.heading{
+    margin-top: -20px;
+    font-size: 30px;
+
+}
+input {
+  
+        border: 0;
+        outline: 0;
+        background-color: #ebfffc;
+        color: black;
+        padding: 10px 25px;
+        height: 40px;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        flex: 1;
+        margin-top: 20px;
+       
+        font-size: 18px;
+    
+     
+}
+.save{
+    border: 0;
+        outline: 0;
+        background-color: #ebfffc;
+       color: black;
+        height: 80px;
+        padding: 10px 25px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        margin-top: 20px;
+        background-color: rgb(249, 141, 18);
+        font-size: larger;
+}
+.save:hover{
+    border: 2px solid white;
+}  
+.notes  {
+    display:flex;
+}    
+
+.textArea{
+    
+    color: black;
+    background-color: white;
+    border-radius: 30px;
+   padding: 5px;
+    margin-top: 15px;
+    width: 70%;
+    font-size: 25px;
+    padding-left: 20px;
+}
+.delete{
+   width: 50px;
+    height: 50px;
+    margin-top: 17px;
+    border-radius: 50%;
+    border: transparent;
+    font-size: large;
+    background-color: aqua;
+}
+.delete:hover{
+    border: 2px solid white;
+    
+}

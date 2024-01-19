@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TO DO list</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <div class="heading">TO-DO LIST</div>
+      <div class="note">
+        <input
+          type="text"
+          placeholder="Write your notes here !"
+          class="Notes"
+        />
+        <button class="save">save it</button>
+      </div>
+     
+    </div>
+    <script>
+      const btn = document.querySelector(".save");
+
+      btn.addEventListener("click", (e) => {
+        var text = document.querySelector(".Notes").value;
+        let div = document.createElement("div");
+        div.className = "notes";
+        const m = document.createElement("div");
+        m.className = "textArea";
+        m.innerText = text;
+        let n = document.createElement("button");
+        n.className = "delete";
+        n.innerText = "X";
+        div.appendChild(m);
+        div.appendChild(n);
+        const card = document.querySelector(".card");
+        card.appendChild(div);
+        n.addEventListener("click", () => {
+          const btnd = document.querySelector(".notes");
+          if (btnd.style.display =="none") {
+            btnd.style.display = "block";
+          }
+          else{
+            btnd.style.display = "none";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
