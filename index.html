@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TO DO list</title>
+    <title>TO-DO List</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -12,38 +12,47 @@
       <div class="note">
         <input
           type="text"
-          placeholder="Write your notes here !"
+          placeholder="Write your notes here!"
           class="Notes"
         />
-        <button class="save">save it</button>
+        <button class="save">Save</button>
       </div>
-     
+      <div class="notes-container"></div>
     </div>
-    <script>
-      const btn = document.querySelector(".save");
 
-      btn.addEventListener("click", (e) => {
-        var text = document.querySelector(".Notes").value;
-        let div = document.createElement("div");
-        div.className = "notes";
-        const m = document.createElement("div");
-        m.className = "textArea";
-        m.innerText = text;
-        let n = document.createElement("button");
-        n.className = "delete";
-        n.innerText = "X";
-        div.appendChild(m);
-        div.appendChild(n);
-        const card = document.querySelector(".card");
-        card.appendChild(div);
-        n.addEventListener("click", () => {
-          const btnd = document.querySelector(".notes");
-          if (btnd.style.display =="none") {
-            btnd.style.display = "block";
-          }
-          else{
-            btnd.style.display = "none";
-          }
+    <script>
+      const saveButton = document.querySelector(".save");
+      const notesContainer = document.querySelector(".notes-container");
+
+      saveButton.addEventListener("click", () => {
+        const noteText = document.querySelector(".Notes").value.trim();
+
+        if (noteText === "") {
+          alert("Please enter some text before saving!");
+          return;
+        }
+
+        const noteDiv = document.createElement("div");
+        noteDiv.className = "note";
+
+        const textDiv = document.createElement("div");
+        textDiv.className = "text-area";
+        textDiv.innerText = noteText;
+
+        const deleteButton = document.createElement("button");
+        deleteButton.className = "delete";
+        deleteButton.innerText = "X";
+
+        noteDiv.appendChild(textDiv);
+        noteDiv.appendChild(deleteButton);
+        notesContainer.appendChild(noteDiv);
+
+        // Clear the input field
+        document.querySelector(".Notes").value = "";
+
+        // Add delete functionality
+        deleteButton.addEventListener("click", () => {
+          noteDiv.remove();
         });
       });
     </script>
